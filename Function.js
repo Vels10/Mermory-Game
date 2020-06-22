@@ -2,7 +2,7 @@ let itemName = localStorage.getItem("number");
 console.log(itemName);
 
 function pageRedirect() {
-  window.location.href = "Games.html";
+  window.location.href = "index.html";
 }
 function Checking(){
   var guess = document.getElementById('number');
