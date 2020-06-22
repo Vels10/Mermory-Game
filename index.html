@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Memory Game </title>
+  <link href = "Games.css" rel = "stylesheet" type = "text/css">
+</head>
+<body>
+  <div>
+    <h1>Generate The Number </h1> <br/>
+    <button class="rectangle green" onclick="number();">Generate</button>
+    <br/>
+    <p id = "number"></p>
+    <script>
+        var ran = document.getElementById('number');
+        function number(){
+          window.setInterval('refresh()', 10000);                                       // 10 seconds time interval
+          var random =                                                                  // Generate a random number
+          ("" + Math.random()).substring(2, 8);
+          ran.innerHTML = (random +"<br/><br/>Refreshing the page in 10 seconds..");
+          localStorage.setItem("number",random);                                        // LocalStorage of Random Number
+          var ran_num = localStorage.getItem("number");
+          console.log(ran_num);                                                         // Debugging Purpose
+        }
+        function refresh() {
+            window.location.href = ('Check.html');                                       // Redirecting to next page
+        }
+    </script>
+  </div>
+</body>
+</html>
